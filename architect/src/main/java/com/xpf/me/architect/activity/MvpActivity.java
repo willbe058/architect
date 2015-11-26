@@ -24,7 +24,7 @@ public abstract class MvpActivity<V extends IView, P extends IPresenter<V>> exte
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        getDelegate().onCreate(savedInstanceState);
+        getMvpDelegate().onCreate(savedInstanceState);
     }
 
     @Override protected void onDestroy() {
