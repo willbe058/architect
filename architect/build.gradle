@@ -1,8 +1,8 @@
 apply plugin: 'com.android.library'
-
+def SdkVersion = '23.1.1'
 android {
     compileSdkVersion 23
-    buildToolsVersion "23.0.1"
+    buildToolsVersion "23.0.2"
 
     defaultConfig {
         minSdkVersion 16
@@ -12,7 +12,7 @@ android {
     }
     buildTypes {
         release {
-            minifyEnabled false
+            minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
@@ -21,10 +21,10 @@ android {
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     testCompile 'junit:junit:4.12'
-    compile 'com.android.support:appcompat-v7:23.1.0'
+    compile "com.android.support:appcompat-v7:$SdkVersion"
     compile 'io.reactivex:rxjava:1.0.14'
     compile 'io.reactivex:rxandroid:1.0.1'
-    compile 'com.android.support:palette-v7:23.1.0'
-    compile 'com.android.support:recyclerview-v7:23.1.0'
+    compile "com.android.support:palette-v7:$SdkVersion"
+    compile "com.android.support:recyclerview-v7:$SdkVersion"
     compile 'com.mcxiaoke.volley:library:1.0.19'
 }
